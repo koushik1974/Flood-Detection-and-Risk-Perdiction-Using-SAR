@@ -44,7 +44,12 @@ Next week, the focus will be on refining the dataset and training the model to e
 
 { POST FLOOD IMAGE BEFORE SEGMENTATION }
 {VIJAYAWADA , 2017 FLOOD BEFORE IMAGE }
-🗓️ Week 2 Progress — Ground Truth Generation & Model Training
+
+
+
+🗓️ WEEK 2 Progress 
+
+— Ground Truth Generation & Model Training
 
 In Week 2, I focused on understanding the ground truth creation process and how pixel-level changes in SAR (Synthetic Aperture Radar) images can be used to detect flood-affected regions.
 
