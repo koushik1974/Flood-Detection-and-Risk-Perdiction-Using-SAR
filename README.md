@@ -30,6 +30,15 @@ This week, I explored information about major floods in India and identified the
 
 I examined the SAR satellite images in the collected dataset to understand the differences between pre-flood and post-flood conditions. Additionally, I searched for suitable models to clean and preprocess the data, which will be used for training in the upcoming week.
 
+I used the Copernicus Open Access Hub
+
+- I used the Copernicus Open Access Hub, a platform that provides satellite imagery captured by Sentinel-1 SAR (Synthetic Aperture Radar). This satellite uses deep-penetrating radar waves capable of passing through clouds and capturing accurate reflections of the earth’s surface, including water bodies and surrounding landscapes. This feature makes it ideal for obtaining pre- and post-flood images even under cloudy or stormy conditions.
+
+
+<img width="1521" height="840" alt="Screenshot 2025-11-08 154554" src="https://github.com/user-attachments/assets/2ebf2216-c68b-4515-a9a8-83b23a4edbcb" />
+Screenshot of the interface of Copernicus 
+
+
 To support this, I developed two Python scripts:
 
 unet.py – Labels the data based on the time and location of each flood event.
@@ -37,14 +46,11 @@ unet.py – Labels the data based on the time and location of each flood event.
 train_flood_unet.py – Creates the dataset and trains the U-Net model for flood prediction.
 
 Next week, the focus will be on refining the dataset and training the model to evaluate its performance.
-<img width="1046" height="679" alt="image5" src="https://github.com/user-attachments/assets/e4ec0aa5-f591-4664-b1b4-6b2098d69472" />
-{ PRE FLOOD IMAGES BEFORE SEGMENTATION }
-{VIJAYAWADA , 2017 FLOOD BEFORE IMAGE }
-<img width="1046" height="679" alt="image5" src="https://github.com/user-attachments/assets/0ed8c505-a8e8-4a65-b317-f4107c315961" />
 
-{ POST FLOOD IMAGE BEFORE SEGMENTATION }
-{VIJAYAWADA , 2017 FLOOD BEFORE IMAGE }
+<img width="1081" height="674" alt="Screenshot 2025-11-08 154613" src="https://github.com/user-attachments/assets/a3a8b62e-803c-4a1b-9131-4ab13c68ca8b" />
 
+
+<img width="1092" height="653" alt="Screenshot 2025-11-08 154623" src="https://github.com/user-attachments/assets/efb97f9a-46cb-4940-9a5c-836c27c0a1ef" />
 
 
 🗓️ WEEK 2 Progress 
@@ -74,6 +80,10 @@ Generates flood masks by comparing pixel intensity changes between the two image
 Saves cleaned binary masks to the ground_truth_masks/ directory.
 
 Produces visualizations and flood statistics (percentage of flooded pixels) for analysis.
+
+
+<img width="1328" height="298" alt="Screenshot 2025-11-08 154636" src="https://github.com/user-attachments/assets/094dae51-6703-44b2-ad43-cefa9ac11841" />
+
 
 🧩 Model Training:
 
