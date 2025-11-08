@@ -1,4 +1,4 @@
-<img width="1046" height="679" alt="image5" src="https://github.com/user-attachments/assets/687a4235-5919-4dd3-a956-268290232b1d" /># Flood-Detection-and-Risk-Perdiction-Using-SAR
+# Flood-Detection-and-Risk-Perdiction-Using-SAR
 This project uses pre- and post-flood SAR satellite images to analyze water spread patterns and identify flood-prone areas. By learning from past flood data, the model predicts which regions are most likely to be affected in future flood waves, aiding early warning and disaster management.
 
 
@@ -38,10 +38,12 @@ train_flood_unet.py – Creates the dataset and trains the U-Net model for flood
 
 Next week, the focus will be on refining the dataset and training the model to evaluate its performance.
 <img width="1046" height="679" alt="image5" src="https://github.com/user-attachments/assets/e4ec0aa5-f591-4664-b1b4-6b2098d69472" />
+{ PRE FLOOD IMAGES BEFORE SEGMENTATION }
+{VIJAYAWADA , 2017 FLOOD BEFORE IMAGE }
 <img width="1046" height="679" alt="image5" src="https://github.com/user-attachments/assets/0ed8c505-a8e8-4a65-b317-f4107c315961" />
 
-
-
+{ POST FLOOD IMAGE BEFORE SEGMENTATION }
+{VIJAYAWADA , 2017 FLOOD BEFORE IMAGE }
 🗓️ Week 2 Progress — Ground Truth Generation & Model Training
 
 In Week 2, I focused on understanding the ground truth creation process and how pixel-level changes in SAR (Synthetic Aperture Radar) images can be used to detect flood-affected regions.
