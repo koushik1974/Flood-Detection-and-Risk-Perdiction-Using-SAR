@@ -94,3 +94,161 @@ Experimented with preprocessing and normalization to improve flood feature extra
 🌐 Web Integration:
 
 Began developing a web interface to visualize model results — currently halfway through building the front-end for viewing flood detection outputs interactively.
+
+
+🗓️ WEEK 3 Progress
+— Web Application Development & Model Integration
+
+In Week 3, the focus is on building an interactive web application that connects the trained U-Net flood detection model with a user-friendly interface. The goal was to allow users to upload SAR image pairs, visualize flood predictions, and receive confidence scores, flood coverage, and regional risk levels directly from the browser.
+
+🌐 Webpage Creation & Front-End Development
+
+This week, I built the first working version of the Flood Detection Web Platform, designed to deliver an intuitive workflow:
+
+✔️ Key Features Developed:
+
+Image Upload Interface:
+Created a responsive web page using HTML, CSS, and JavaScript that allows users to upload pre-flood and post-flood SAR image tiles.
+
+Live Preview:
+The selected images are displayed instantly on the webpage before processing.
+
+Interactive Visualization Output Section:
+Designed placeholder regions for displaying:
+
+Predicted flood mask
+
+Overlay visualization
+
+Confidence score
+
+Flood coverage percentage
+
+Final risk rating (Low / Medium / High)
+
+<img width="1342" height="785" alt="image" src="https://github.com/user-attachments/assets/de4a51d3-7ac9-4383-955e-b3f596ae7086" />
+
+
+✔️ Design Highlights:
+
+Clean dashboard with dedicated sections for input images and model outputs
+
+Loading animation while the backend model generates predictions
+
+Error handling pop-ups if incorrect or missing images are uploaded
+
+🔗 Backend Integration (FastAPI/Flask)
+
+To connect the webpage with the trained U-Net model, I built a backend API.
+
+✔️ API Endpoints Implemented:
+/predict endpoint
+
+ACCEPTS:
+
+Pre-flood SAR image
+
+Post-flood SAR image
+
+Backend Steps:
+
+Preprocesses the uploaded images (resize, normalize).
+
+Feeds them into the trained U-Net model.
+
+GENERATES:
+
+Predicted flood mask
+
+Flood overlay visualization (mask on top of post-flood image)
+
+COMPUTES:
+
+- Model confidence score
+
+- Flood coverage percentage
+
+- Risk level based on thresholded flood area
+
+- Returns the results as JSON + visualization images (PNG).
+
+<img width="1387" height="466" alt="image" src="https://github.com/user-attachments/assets/652f4a35-8c0e-45e1-ade8-8c8e5646ea2c" />
+
+
+<img width="1397" height="781" alt="image" src="https://github.com/user-attachments/assets/7a57149e-1f34-4405-b069-f3c3c365e95a" />
+
+
+
+This is a small thing i started working on after the main project got to finale .
+
+/weather endpoint (Quick Weather Prediction)
+- Built a small integration using a weather API to get:
+- Current rainfall
+- Humidity
+- River overflow indicators
+- Short-term flood risk hints
+- This adds real-time environmental context at the start of every prediction cycle.
+
+🧠 Backend Processing Logic Implemented
+✔️ Flood Coverage Calculation
+
+Number of pixels labeled as “flooded” ÷ Total image pixels = Flood Coverage %
+
+✔️ Confidence Score
+
+Softmax output of the segmentation mask averaged across predicted flood-region pixels.
+
+✔️ Risk Level Classification
+
+Based on flood coverage + intensity differences:
+
+- Flood %	Risk Level
+- 0–20%	Low
+- 20–50%	Medium
+- >50%	High
+📡 Full Integration Workflow
+
+When the webpage is run:
+
+i) User uploads pre-flood & post-flood images.
+
+ii) The frontend sends them to the backend /predict API.
+
+iii) The U-Net model processes both images.
+
+iv) Backend returns:
+
+v) Flood mask
+
+vi) Flood overlay
+
+vii) Confidence score
+
+viii) Flood coverage
+
+ix) Risk level
+
+The webpage auto-updates the UI with:
+
+- Visual flood map
+
+- Color-coded risk badge
+
+- Numeric analysis (coverage %, confidence)
+
+
+
+🖥️ Visual Output Example (as displayed on the webpage)
+
+- Predicted Flood Mask: grayscale / binary mask
+
+- Overlay Visualization: mask placed on SAR post-flood image
+
+- Confidence Score: e.g., 0.87
+
+- Flood Coverage: e.g., 34.2%
+
+- Risk Level: “Medium Risk”
+
+<img width="1400" height="732" alt="image" src="https://github.com/user-attachments/assets/178d5fcb-05cf-4f3c-988d-ab3025770805" />
+
